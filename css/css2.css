@@ -1,0 +1,41 @@
+div {
+    background-color: lightcyan;
+}
+
+body {
+    background-color: lightpink;
+}
+
+p {
+    color: blueviolet;
+}
+
+/* class를 가르키는 셀렉터 (클래스선택자) */
+/* 디자인 속성을 잘 구분해서 장인들이 만들어둠 */
+.red-text {
+    color: red;
+}
+
+.yellow-text {
+    color: yellow;
+}
+
+.big-size {
+    font-size: 50px;
+}
+
+.border {
+    border-style: dashed;
+    border-width: 1px;
+}
+
+p.border {
+    border-style: solid;
+    border-width: 1px;
+}
+
+/* id 셀렉터(#이용), 많이 사용하지 않음, 클래스를 많이 사용*/
+/* 기존것을 무시하고 오버라이드 */
+#div1 {
+    background-color: lightgreen;
+}
