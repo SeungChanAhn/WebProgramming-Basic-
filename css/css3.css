@@ -1,0 +1,20 @@
+.border {
+    border-style: dashed;
+    border-width: 1px;
+}
+
+#div1 {
+    background-color: red;
+}
+
+#div2 {
+    background-color: yellow;
+}
+
+[name="div3"] {
+    background-color: brown;
+}
+
+[name="div4"] {
+    background-color: blue;
+}
