@@ -11,9 +11,13 @@
 <body>
     <style>
         .header {
-            display: inline-block;
-            border: gray solid;
-            background-color: gray;
+            width: 100%;
+            height: 40px;
+            top: 0;
+            right: 0;
+            left: 0;
+            border: black solid;
+            background-color: black;
             position: absolute;
             color: white
         }
@@ -32,7 +36,7 @@
             position: absolute;
             text-align: center;
             font-size: 30pt;
-            top: 50%;
+            top: 40%;
             width: 100%;
         }
 
@@ -48,13 +52,26 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
+
+        .star {
+            position: absolute;
+            color: white;
+            border: none;
+            left: 20px;
+            top: 20px;
+        }
+
+        .item {
+            background-color: white;
+            margin: 100px;
+        }
     </style>
 
     <img class="background"
         src="https://d6scj24zvfbbo.cloudfront.net/4b8030942641e079b68aff2ffac0df4d/200000465-987f8987fb/wp4155376.jpg?ph=f682445c82"
         alt="">
     <div class="introduce">
-        <b><span style="color:white">안녕하세요, 제 이름은 <span style="color:gold">안승찬입니다.</span>
+        <b><span style="color:white">안녕하세요, 제 이름은 <span style="color:red">안승찬입니다.</span>
                 <br>
                 저는 프론트엔드 개발자입니다.</span></b>
         <br>
@@ -62,12 +79,29 @@
         <br>
         <br>
         <br>
-        <button>view my works</button>
-    </div>
-    <div class="header">
-        ★
+        <button><a href="facebook.html"><span style="color:white">view my works</span></a></button>
     </div>
 
+    <div class="header">
+    </div>
+
+    <button class="star">★</button>
+
+    <div class="item">
+        <a href="https://www.google.com"><span style="color:white">CONTACT</span></a>
+    </div>
+
+    <div class="item">
+        <a href="https://github.com/SeungChanAhn"><span style="color:white">PROJECT</span></a>
+    </div>
+
+    <div class="item">
+        <a href="https://github.com/SeungChanAhn"><span style="color:white">ABOUT</span></a>
+    </div>
+
+    <div class="item">
+        <a href="https://www.naver.com"><span style="color:white">HOME</span></a>
+    </div>
 
 </body>
 
