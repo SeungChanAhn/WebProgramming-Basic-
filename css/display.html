@@ -15,6 +15,7 @@
             /* inline은 높이지정 불가 */
             display: inline;
             height: 200px;
+            border: 1px salmon solid;
         }
 
         span {
@@ -22,7 +23,26 @@
             display: block;
             height: 200px;
         }
+
+        div.div1 {
+            background-color: pink;
+            margin: 0;
+            padding: 0;
+            display: inline;
+            position: relative;
+            left: 30px;
+            top: 30px;
+        }
+
+        div.div2 {
+            background-color: lemonchiffon;
+            position: fixed;
+            right: 20px;
+        }
     </style>
+
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
     <div>div를 옆으로</div>
     <div>div를 옆으로</div>
     <span>span을 아래로</span>
