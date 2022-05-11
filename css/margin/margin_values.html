@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin 연습</title>
+</head>
+
+<body>
+    <style>
+        .normal {
+            display: inline-block;
+            border: 5px solid red;
+            margin: 100px;
+        }
+
+        .top {
+            display: inline-block;
+            border: 5px solid red;
+            margin-top: 100px;
+        }
+
+        .left {
+            display: inline-block;
+            border: 5px solid red;
+            margin-left: 100px;
+        }
+
+        .right {
+            display: inline-block;
+            border: 5px solid red;
+            margin-right: 100px;
+        }
+
+        .bottom {
+            display: inline-block;
+            border: 5px solid red;
+            margin-bottom: 100px;
+        }
+
+        .t_r_b_l {
+            display: inline-block;
+            border: 5px solid blue;
+            margin: 100px 100px 100px 100px;
+        }
+
+        .t_rl_b {
+            display: inline-block;
+            border: 5px solid blue;
+            margin: 100px 100px 100px;
+        }
+
+        .tb_lr {
+            display: inline-block;
+            border: 5px solid blue;
+            margin: 100px 100px;
+        }
+    </style>
+
+    <div class="normal">
+        margin
+    </div>
+
+    <div class="top">
+        margin-top
+    </div>
+
+    <div class="left">
+        margin-left
+    </div>
+
+    <div class="right">
+        margin-right
+    </div>
+
+    <div class="bottom">
+        margin-bottom
+    </div>
+
+    <br>
+
+    <div class="t_r_b_l">
+        margin: top right bottom left
+    </div>
+
+    <div class="t_rl_b">
+        margin: top (right & left) bottom
+    </div>
+
+    <div class="tb_lr">
+        margin: (top & bottom) (left & right)
+    </div>
+
+</body>
+
+</html>
