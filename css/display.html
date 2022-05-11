@@ -12,11 +12,15 @@
     <!-- inline은 옆으로, block은 아래로 -->
     <style>
         div {
+            /* inline은 높이지정 불가 */
             display: inline;
+            height: 200px;
         }
 
         span {
+            /* block은 높이지정 가능 */
             display: block;
+            height: 200px;
         }
     </style>
     <div>div를 옆으로</div>
