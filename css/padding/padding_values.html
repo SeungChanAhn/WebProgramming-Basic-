@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padding 연습</title>
+</head>
+
+<body>
+    <style>
+        .normal {
+            display: inline-block;
+            border: 5px solid red;
+            padding: 100px;
+        }
+
+        .top {
+            display: inline-block;
+            border: 5px solid red;
+            padding-top: 100px;
+        }
+
+        .left {
+            display: inline-block;
+            border: 5px solid red;
+            padding-left: 100px;
+        }
+
+        .right {
+            display: inline-block;
+            border: 5px solid red;
+            padding-right: 100px;
+        }
+
+        .bottom {
+            display: inline-block;
+            border: 5px solid red;
+            padding-bottom: 100px;
+        }
+
+        .t_r_b_l {
+            display: inline-block;
+            border: 5px solid blue;
+            padding: 100px 100px 100px 100px;
+        }
+
+        .t_rl_b {
+            display: inline-block;
+            border: 5px solid blue;
+            padding: 100px 100px 100px;
+        }
+
+        .tb_lr {
+            display: inline-block;
+            border: 5px solid blue;
+            padding: 100px 100px;
+        }
+    </style>
+
+    <div class="normal">
+        padding
+    </div>
+
+    <div class="top">
+        padding-top
+    </div>
+
+    <div class="left">
+        padding-left
+    </div>
+
+    <div class="right">
+        padding-right
+    </div>
+
+    <div class="bottom">
+        padding-bottom
+    </div>
+
+    <br><br>
+
+    <div class="t_r_b_l">
+        padding: top right bottom left
+    </div>
+
+    <div class="t_rl_b">
+        padding: top (right & left) bottom
+    </div>
+
+    <div class="tb_lr">
+        padding: (top & bottom) (left & right)
+    </div>
+
+</body>
+
+</html>
