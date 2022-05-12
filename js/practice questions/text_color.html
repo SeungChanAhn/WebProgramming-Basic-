@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4일차 실습2</title>
+</head>
+
+<body>
+    <style>
+        #text {
+            font-size: 100px;
+            text-align: center;
+        }
+
+        #button {
+            text-align: center;
+        }
+    </style>
+
+    <div id="text">
+        <script>
+            let text = prompt();
+
+            if (text == '' || text == null) {
+                alert('텍스트값을 입력해 주세요');
+                text = prompt();
+                document.write(text);
+            } else {
+                document.write(text);
+            }
+
+            function changeRed() {
+                document.getElementById('text').style.color = "#ff0000";
+            }
+            function changeBlue() {
+                document.getElementById('text').style.color = "#1019c9";
+            }
+            function changeGreen() {
+                document.getElementById('text').style.color = "#03851a";
+            }
+        </script>
+    </div>
+
+    <br>
+    <div id="button">
+        <button onclick="changeRed(); alert('빨간색으로 변경됩니다!')">빨강</button>
+        <button onclick="changeBlue(); alert('파란색으로 변경됩니다!')">파랑</button>
+        <button onclick="changeGreen(); alert('초록색으로 변경됩니다!')">초록</button>
+    </div>
+</body>
+
+</html>
