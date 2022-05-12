@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글씨크기변경!</title>
+</head>
+
+<body>
+    <style>
+        .big-text {
+            font-size: 300px;
+        }
+
+        .small-text {
+            font-size: 50px;
+        }
+    </style>
+    <div id="target" class="small-text" onclick="changeClassName()">Hello</div>
+
+    <script>
+        let isSmallText = true;
+
+        function changeClassName() {
+            let target = document.getElementById('target');
+            target.className = 'big-text';
+
+            if (isSmallText) {
+                target.className = 'big-text';
+                isSmallText = false;
+            } else {
+                target.className = 'small-text';
+                isSmallText = true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
