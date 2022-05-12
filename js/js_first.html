@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS First</title>
+    <script src="function_example.js"></script>
+</head>
+
+<body>
+    <!-- 내부 선언 방식, 일반적이지 않음 -->
+    <!-- <script> -->
+    <!-- alert('경고'); -->
+    <!-- </script> -->
+
+    <script>
+        //변수 선언
+        var i = 10;
+        var name = '안승찬';
+        var i = 20; //var는 중복 가능
+
+        //상수
+        const STUDENT_COUNT = 10;
+
+        //변수
+        let j = 20; //let은 중복 불가, 중복되면 빨간줄 뜸
+
+        //자바 스타일의 문자열 병합
+        var result = name + '은' + i + '살입니다';
+
+        //나중에 추가된 문자열 병합
+        result = `${name}은${i}살입니다`;
+
+        function myAlert() {
+            //alert('경고');
+            console.log('경고'); //F12눌러서 콘솔창 확인
+        }
+    </script>
+
+    <!-- 인라인 추가방식 -->
+    <input type="button" value="버튼" onclick="javascript:alert('경고')">
+    <button onclick="alert('경고')">버튼</button>
+
+    <!-- 함수로 만들기 -->
+    <button onclick="myAlert()">버튼</button>
+
+    <!-- 외부선언방식 -->
+    <button ondblclick=showMyName()>더블클릭</button>
+
+</body>
+
+</html>
