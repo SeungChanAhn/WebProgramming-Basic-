@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 연습</title>
+</head>
+
+<body>
+    <style>
+        .big-text {
+            font-size: xx-large;
+        }
+
+        .small-text {
+            font-size: small;
+        }
+    </style>
+    <script>
+        function addTag() {
+            //앞에 내용 날려버림, 뒤로가기 불가
+            document.write('<h1>hello<h1>');
+
+            // document.append('<h1>hello<h1>');
+        }
+
+        function getTitle() {
+            //DOM 객체 자체를 얻음, 통으로 얻음
+            let title = document.getElementById('title');
+            alert(title.textContent);
+            //console.log(title);
+        }
+
+        function getItems() {
+            let items = document.getElementsByClassName('item');
+
+            let firstItem = items[0];
+
+            let content = firstItem.textContent;
+
+            firstItem.textContent = '바보니?'
+
+        }
+    </script>
+    <button onclick="addTag()">TAG 추가</button>
+    <button onclick="getTitle()">title 얻기</button>
+
+    <h1 id="title">Hello World</h1>
+
+    <!-- ul>li*4 -->
+    <ul>
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+    </ul>
+
+    <div id="target" class="small-text" onclick="changeClassName()">Hello</div>
+
+    <script>
+        let isSmallText = true;
+
+        function changeClassName() {
+            let target = document.getElementById('target');
+            target.className = 'big-text';
+
+            if (isSmallText) {
+                target.className = 'big-text';
+                isSmallText = false;
+            } else {
+                target.className = 'small-text';
+                isSmallText = true;
+            }
+        }
+    </script>
+
+    <!-- 엘리먼트에 html코드를 입력하자 innerHTML -->
+    
+    <div id="pic" onclick='changeHtml()'>hello</div>
+    <script>
+        function changeHtml() {
+            let pic = document.getElementById('pic')
+            pic.innerHTML = "<h1>뿅!!</h1>";
+        }
+    </script>
+</body>
+
+</html>
