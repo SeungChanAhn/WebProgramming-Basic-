@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐릭터 움직이기</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <style>
+        #box {
+            position: absolute;
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: beige;
+        }
+
+        #chracter {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $('#chracter').keydown(function () {
+                $('#chracter').animate({
+                    left: '+=1px'
+                }).animate({
+                    top: '+=1px'
+                });
+            });
+        });
+    </script>
+    <div id=box></div>
+    <div id=chracter>
+        <img src="https://mblogthumb-phinf.pstatic.net/20160817_259/retspe_14714118890125sC2j_PNG/%C7%C7%C4%AB%C3%F2_%281%29.png?type=w800"
+            alt="피카츄" width="80px">
+    </div>
+</body>
+
+</html>
