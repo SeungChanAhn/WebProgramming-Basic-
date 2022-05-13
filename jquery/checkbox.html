@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //onload
+        $(function () {
+            $('#all_check_button').click(function () {
+                $(':checkbox[name=mycheckbox]').each(function () {
+                    this.checked = true;
+                });
+            });
+
+            // 체크 확인
+            $('#check_check_button').click(function () {
+                if ($(':checkbox[name=mycheckbox]').is(':checked') == true) {
+                    $('#result').text('OK')
+                } else {
+                    $('#result').text('NO')
+                }
+            });
+
+            //animation
+            $('#box').mouseover(function () {
+                $('#box').animate({
+                    left: '+=100px'
+                }).animate({
+                    top: '+=100px'
+                });
+            });
+
+            $('#box2').click(function () {
+                setTimeout(function () {
+                    $('#box2').animate({
+                        left: '+=100px'
+                    });
+                }, 1000);
+            });
+
+            // 1초마자 로그 출력
+            setInterval(function () {
+                console.log()
+            });
+        });
+    </script>
+
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: aqua;
+        }
+
+        #box2 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: red;
+        }
+    </style>
+    <form action="">
+        <input type="checkbox" , name="mycheckbox" , id="">
+        <input type="checkbox" , name="mycheckbox" , id="">
+        <input type="checkbox" , name="mycheckbox" , id="">
+        <input type="checkbox" , name="mycheckbox" , id="">
+        <input type="checkbox" , name="mycheckbox" , id="">
+        <input type="button" id="all_check_button" value="전체 체크">
+        <input type="button" id="check_check_button" value="체크 확인">
+        <span id="result"></span>
+    </form>
+
+    <div id="box"></div>
+    <div id="box2"></div>
+</body>
+
+</html>
