@@ -10,6 +10,10 @@
 
 <body>
     <style>
+        #buttons {
+            text-align: center;
+        }
+
         .gray {
             border: 1px solid black;
             background-color: rgb(115, 115, 115);
@@ -58,10 +62,11 @@
         }
 
     </script>
-
-    <button id="button1" class="gray" onclick="changeColor1()">html</button>
-    <button id="button2" class="gray" onclick="changeColor2()">css</button>
-    <button id="button3" class="gray" onclick="changeColor3()">javascript</button>
+    <div id="buttons">
+        <button id="button1" class="gray" onclick="changeColor1()">html</button>
+        <button id="button2" class="gray" onclick="changeColor2()">css</button>
+        <button id="button3" class="gray" onclick="changeColor3()">javascript</button>
+    </div>
 </body>
 
 </html>
