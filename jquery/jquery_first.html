@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 시작!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //onload
+        $(function () {
+            console.log('onload 후에 동작!');
+
+            // 클릭 이벤트 설정
+            $('#button1').click(function () {
+                console.log('클릭1!!!');
+            });
+
+            // 기존 javascript 클릭 이벤트 설정
+            document.getElementById('button2').addEventListener('click', function () {
+                console.log('클릭2!!!');
+            })
+
+            // 기존방식과 비슷한 방식
+            $('#button3').on('click', function () {
+                console.log('클릭3!!!');
+            });
+
+            // 이벤트 체인
+            $('#button4').click(function () {
+                console.log('클릭!!!');
+            }).mouseover(function () {
+                console.log('마우스 오버');
+            }).mouseover(function () {
+                console.log('마우스 오버 떠났어');
+            }).mouseover(function () {
+                console.log('마우스 오버 진짜 떠났어'); // 계속 제이쿼리 객체 리턴
+            });
+
+            // 
+            $('#button5').click(function () {
+                // $('#text').html('<b>html</b>'); //클릭하면 html로 변경
+                // $('#text').text('<b>html</b>'); //클릭하면 <b>html</b>로 변경
+                $('#text').append('hello').append(' world').attr('class', 'hello').attr('name', 'world'); 
+                // 클릭하면 옆으로 'hello world'출력, 클래스와 네임 변경
+                $('.big-text').attr('name','nono'); //클릭하면 big-text 클래스의 네임을 nono로 변경
+            });
+
+            
+        });
+    </script>
+    <div id="title">title</div>4
+    <div class="big-text">big text 1</div>
+    <div class="big-text">big text 2</div>
+    <button id="button1">클릭1</button>
+    <button id="button2">클릭2</button>
+    <button id="button3">클릭3</button>
+    <button id="button4">클릭4</button>
+
+    <p id="text">글씨자리</p>
+    <button id="button5">클릭5</button>
+</body>
+
+</html>
