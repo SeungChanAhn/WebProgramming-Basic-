@@ -5,12 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Article</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
+    <style>
+        .container {
+            width: 200px;
+        }
 
+        .header {
+            color: white;
+            width: 220px;
+            padding: 10px;
+            background-color: #2DB400;
+        }
+
+        .content {
+            width: 220px;
+            padding: 10px;
+            background-color: rgb(227, 228, 232);
+        }
+
+        .item {
+            width: 200px;
+            background-color: white;
+            margin: 10px;
+        }
+    </style>
+
+    <div class="container">
+        <div class="header">
+            기사 등록하기
+        </div>
+        <div class="content">
+            <div class="item">
+                <b>박지성</b> SBS에서 월드컵 보세요!
+            </div>
+            <div class="item">
+                <b>안정환</b> MBC죠..
+            </div>
+            <div class="item">
+                <b>이영표</b> KBS는 수신료의 가치를..
+            </div>
+        </div>
+        <br>
+        <input type="button" value="등록하기" id="input">
+        <script>
+            $('#input').click(function () {
+                let name = prompt('기자이름');
+                let text = prompt('기사내용');
+                let article = '<div class="item"><b>' + name + '</b>  ' + text + '<br></div>';
+                $('.content').append(article);
+            });
+        </script>
+    </div>
 </body>
 
 </html>
