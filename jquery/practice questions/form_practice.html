@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      $(function () {
+        $("#form").submit(function () {
+          if ($("#id").val().trim() == "") {
+            alert("아이디를 입력하세요.");
+            return false;
+          }
+          if ($("#password").val().trim().length < 5) {
+            alert("비밀번호는 5자 이상입니다.");
+            return false;
+          }
+          if (!document.form.sex[0].checked && !document.form.sex[1].checked) {
+            alert("성별을 체크해주세요.");
+            return false;
+          }
+          if ($("select[name=job] option:selected").text() == "") {
+            alert("직업을 선택해주세요.");
+            return false;
+          }
+          if ($("input:checkbox[name=hobby]:checked").length < 3) {
+            alert("취미를 3개 이상 선택해주세요.");
+            return false;
+          }
+        });
+      });
+    </script>
+    <style>
+      table {
+        width: 300px;
+      }
+    </style>
+    <form name="form" id="form">
+      <table>
+        <tr>
+          <td>아이디</td>
+          <td><input type="email" name="id" id="id" /></td>
+        </tr>
+        <tr>
+          <td>비밀번호</td>
+          <td><input type="password" name="password" id="password" /></td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <td>
+            <input type="radio" name="sex" id="man" />남자
+            <input type="radio" name="sex" id="woman" />여자
+          </td>
+        </tr>
+        <tr>
+          <td>직업</td>
+          <td>
+            <select name="job">
+              <option value="null"></option>
+              <option value="doctor">의사</option>
+              <option value="student">학생</option>
+              <option value="teacher">교사</option>
+              <option value="youtuber">유튜버</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>취미</td>
+          <td>
+            <input type="checkbox" name="hobby" id="read" />독서
+            <input type="checkbox" name="hobby" id="football" />축구
+            <input type="checkbox" name="hobby" id="basketball" />농구<br />
+            <input type="checkbox" name="hobby" id="baseball" />야구
+            <input type="checkbox" name="hobby" id="ballyball" />배구
+            <input type="checkbox" name="hobby" id="golf" />골프
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="reset" value="취소" />
+          <input type="submit" value="회원가입" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
