@@ -22,7 +22,6 @@
       $("input[name=check]").click(function () {
         let total = $("input[name=check]").length;
         let checked = $("input[name=check]:checked").length;
-
         if (total != checked) $("#all-check").prop("checked", false);
         else $("#all-check").prop("checked", true);
       });
@@ -35,20 +34,16 @@
       });
 
       $("#log").click(function () {
-        //로그출력
-        $("input:checkbox[name=check]").each(function () {
-          if (this.checked) {
-            let index = $("input:checkbox[name=check]").index(this);
-            console.log(`${$(".title")[index + 1].textContent}`);
-          }
-        });
-      });
-
-      $("#log").click(function () {
-        // 아무것도 선택 안하면 알림출력
-        if (!$("input:checkbox[name=check]").is(":checked")) {
-          alert("선택해주세요");
+        // 체크가 없다면
+        if ($(":checkbox[name=check]").is(":checked") == false) {
+          alert('선택 없음!!');
+          return;
         }
+
+        // 체크된 체크박스
+        $(":checkbox[name=check]:checked").each(function () {
+          console.log($(this).val());
+        });
       });
     });
   </script>
@@ -92,42 +87,42 @@
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="1행"/>
           </td>
           <td class="title">가가가가가가가가가</td>
           <td class="time">11:11:00</td>
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="2행"/>
           </td>
           <td class="title">나</td>
           <td class="time">11:11:00</td>
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="3행"/>
           </td>
           <td class="title">다</td>
           <td class="time">11:11:00</td>
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="4행"/>
           </td>
           <td class="title">라</td>
           <td class="time">11:11:00</td>
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="5행"/>
           </td>
           <td class="title">마</td>
           <td class="time">11:11:00</td>
         </tr>
         <tr>
           <td class="board-table">
-            <input type="checkbox" name="check" />
+            <input type="checkbox" name="check" value="6행"/>
           </td>
           <td class="title">바</td>
           <td class="time">11:11:00</td>
