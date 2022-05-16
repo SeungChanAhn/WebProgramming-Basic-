@@ -11,44 +11,65 @@
 
 <body>
     <style>
-        #box {
-            position: absolute;
-            width: 500px;
-            height: 300px;
-            border: 1px black solid;
+        body {
+            margin: 0;
         }
 
-        #chracter {
+        #container {
             position: absolute;
-            left: 220px;
-            top: 100px;
+            width: 600px;
+            height: 600px;
+            border: 1px black solid;
+            left: 50px;
+            top: 50px;
+        }
+
+        #mario {
+            position: absolute;
+            width: 100px;
+            height: 100px;
         }
     </style>
-    <script>
-        $(document).keyup(function (event) {
-            if (event.keyCode == "37") {
-                $("#chracter").animate({
-                    left: "-=15px",
-                });
-            } else if (event.keyCode == "39") {
-                $("#chracter").animate({
-                    left: "+=15px",
-                });
-            } else if (event.keyCode == "38") {
-                $("#chracter").animate({
-                    top: "-=15px",
-                });
-            } else if (event.keyCode == "40") {
-                $("#chracter").animate({
-                    top: "+=15px",
-                });
-            }
-        });
-    </script>
-    <div id="box">
-        <img src="https://mblogthumb-phinf.pstatic.net/20160817_259/retspe_14714118890125sC2j_PNG/%C7%C7%C4%AB%C3%F2_%281%29.png?type=w800"
-            alt="피카츄" id="chracter" width="80px" />
+    <div id="container">
+        <img src="../../assets/mario2.png" alt="마리오" id="mario" />
     </div>
+    <script>
+        const WIDTH = 600; // 캐릭터 범위 나가지 않게 계산위해
+        const HEIGHT = 600;
+        let mario = $("#mario");
+
+        $("body").keydown(function (event) {
+            let left = parseInt(mario.css("left").replace("px", ""));
+            let top = parseInt(mario.css("top").replace("px", ""));
+            let right = left + 100;
+            let bottom = top + 100;
+            let move = 25;
+
+            console.log(left)
+            switch (event.key) {
+                case "ArrowLeft":
+                    if (left - move >= 0) {
+                        mario.css({ left: '-=25px' });
+                    }
+                    break;
+                case "ArrowRight":
+                    if (right + move <= WIDTH) {
+                        mario.css({ left: '+=25px' });
+                    }
+                    break;
+                case "ArrowUp":
+                    if (top - move >= 0) {
+                        mario.css({ top: '-=25px' });
+                    }
+                    break;
+                case "ArrowDown":
+                    if (bottom + move <= HEIGHT) {
+                        mario.css({ top: '+=25px' });
+                    }
+                    break;
+            }
+        })
+    </script>
 </body>
 
 </html>
