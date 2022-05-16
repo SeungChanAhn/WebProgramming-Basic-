@@ -39,8 +39,16 @@
         #killer {
             position: absolute;
             width: 50px;
-            bottom: 80px;
+            bottom: 60px;
             right: -100px;
+        }
+
+        #shoot {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            left: 100px;
         }
 
         #background {
@@ -53,6 +61,14 @@
             animation-duration: 20s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
+        }
+
+        #score {
+            position: absolute;
+            color: white;
+            font-size: 2rem;
+            left: 20px;
+            top: 20px;
         }
 
         @keyframes bg-slide {
@@ -70,10 +86,12 @@
         <div id="background"></div>
         <img id="mario" src="../../assets/mario.gif" alt="mario">
         <img id="killer" src="../../assets/killer.png" alt="killer">
+        <img id="shoot" src="../../assets/shoot.gif" alt="attack" />
+        <div id="score">SCORE : 0</div>
     </div>
     <div id="gameover">
-        게임오버
-        <button class="game_start_button">게임 스타트</button>
+        게임오버<br>
+        <button class="game_start_button">재도전</button>
     </div>
     <div id="start">
         <button class="game_start_button">게임 시작</button>
@@ -85,13 +103,16 @@
 
         let mario = $("#mario");
         let killer = $("#killer");
+        let shoot = $("#shoot");
 
         // 상태
         let isJumping = false;
+        let isShooting = false;
         let isGameOver = false;
+        let score = 0;
 
         function jump() {
-            if (isJumping) {
+            if (isJumping || isGameOver) {
                 return;
             }
 
@@ -101,6 +122,18 @@
                     isJumping = false;
                 });
         }
+        function shooting() {
+            $("#shoot").show();
+            if (isShooting) {
+                return;
+            }
+            isShooting = true;
+            shoot.animate({ left: "120%" }, 3000, function () {
+                shoot.css({ left: "100px" })
+                isShooting = false;
+                $("#shoot").hide();
+            });
+        }
 
         function moveKiller() {
             killer.animate({ right: "120%" }, 3000, function () {
@@ -108,8 +141,23 @@
 
                 if (isGameOver == false) {
                     setTimeout(moveKiller, 1000);
+                    score += 100;
+                    $("#score").text(`SCORE : ${score}`);
                 }
             });
+        }
+
+        function hitKiller() {
+            let killerLeft = parseInt(killer.css("left").replace("px", ""));
+            let shootLeft = parseInt(shoot.css("left").replace("px", ""));
+            let shootRight = shootLeft + 100;
+
+            if (isShooting == false
+                && shootRight > killerLeft
+                && killerLeft > shootLeft
+            ) {
+                isGameOver = true;
+            }
         }
 
         function marioDead() {
@@ -123,6 +171,8 @@
             ) {
                 isGameOver = true;
                 $("#mario").attr("src", "../../assets/over.gif");
+                score = 0;
+                $("#score").text(`SCORE : 0`);
             }
         }
 
@@ -137,6 +187,7 @@
         }
 
         function gameStart() {
+            $("#shoot").hide();
             $("#gameover").hide();
             $("#start").show();
             $("#container").show;
@@ -157,6 +208,9 @@
                 case " ":
                     jump();
                     break;
+                case "c":
+                    shooting();
+                    break;
             }
         });
 
@@ -167,7 +221,7 @@
 
         function game() {
             setTimeout(moveKiller, 1000);
-
+            
             // 게임 화면 그리기 30frame
             setInterval(function () {
                 if (isGameOver) {
@@ -183,7 +237,6 @@
 
         $(function () {
             gameStart();
-
             $(".game_start_button").click(function () {
                 game();
             });
