@@ -23,15 +23,17 @@
 
     <div id="text">
         <script>
-            let text = prompt();
+            $(function () {
+                let text = prompt("텍스트를 입력해 주세요:")
+                if (text == null || text == "") {
+                    alert('텍스트값을 입력해 주세요');
+                    $('#button').hide();
+                } else {
+                    $('#text').html(text);
+                    $('#button').show();
 
-            if (text == '' || text == null) {
-                alert('텍스트값을 입력해 주세요');
-                text = prompt();
-                document.write(text);
-            } else {
-                document.write(text);
-            }
+                }
+            })
 
             $(function () {
                 $('#button1').click(function () {
