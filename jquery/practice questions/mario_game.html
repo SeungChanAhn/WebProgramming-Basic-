@@ -52,7 +52,10 @@
         <img src="../../assets/mario.gif" alt="마리오" id="mario" />
         <img src="../../assets/killer.png" alt="킬러" id="killer" />
         <!-- <img src="../../assets/shoot.gif" alt="장풍" id="shoot" /> -->
-        <div id="gameover">게임오버</div>
+        <div id="gameover">
+            게임오버
+            <button id="game_start_button">재도전</button>
+        </div>
     </div>
     <script>
         const WIDTH = 600; // 캐릭터 범위 나가지 않게 계산위해
@@ -100,11 +103,15 @@
             killer.stop();
             // 게임오버 화면 보여줌
             $("#gameover").show();
+            isGameOver = true;
         }
 
         function gameStart() {
             $("#gameover").hide();
-            game();
+            isGameOver = false;
+
+            killer.stop();
+            killer.css({ right: "-100px" });
         }
 
         // function moveShoot() {
@@ -131,8 +138,14 @@
                     break;
             }
         });
+        
+        $("#game_start_button").click(function () {
+            gameStart();
+        });
 
         function game() {
+            gameStart();
+
             // 게임 화면 그리기 30frame
             setInterval(function () {
                 if (isGameOver) {
@@ -141,7 +154,7 @@
                     // 1초에 30번 그리기 
                     // 그리기 
                     moveKiller();
- 
+
                     //마리오 사망체크
                     marioDead();
                 }
@@ -149,7 +162,7 @@
         }
 
         $(function () {
-            gameStart();
+            game();
         });
 
     </script>
