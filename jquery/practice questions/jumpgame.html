@@ -1,71 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <style>
-      div {
-        border: 2px black solid;
-        position: relative;
-        width: 1000px;
-        height: 500px;
-      }
-      #user {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        left: 10px;
-        bottom: 0px;
-      }
-      #bee {
-        position: absolute;
-        width: 100px;
-        height: 100px;
-        right: 10px;
-        bottom: 10px;
-      }
+        div {
+            border: 2px black solid;
+            position: relative;
+            width: 1000px;
+            height: 500px;
+        }
+
+        #user {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 10px;
+            bottom: 0px;
+        }
+
+        #bee {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: 10px;
+            bottom: 0px;
+        }
     </style>
     <script>
-        $(document).keyup(function (event) {
-          if (event.keyCode == "32") {
-            $("#user").animate({
-              top: "-=200px",
-            });
-          }
-          if ($(document).keyup) {
-            $("#user").animate({
-              top: "+=200px",
-            });
-          }
+          window.onkeydown = function () {
+    if (event.keyCode == 32) {
+      $(function () {
+        $('#user').animate({
+          top: '-=150px'
+        }).animate({
+          top: '+=150px'
+        })
+      })
+    }}
+    $(function moveInfinit(){
+      $('#bee').animate({
+        left:-100
+      },2000,function(){
+        $('#bee').animate({
+          bottom: 0, left:900},0,moveInfinit);
         });
+      });
 
-        setInterval(function () {
-          $("#bee").show();
-          setTimeout(function () {
-            $("#bee").animate({ left: `-=1000px` });
-            setTimeout(function () {
-              $("#bee").hide();
-              $("#bee").animate({ left: `+=1000px` });
-            }, 1000);
-          }, 200);
-        }, 3000);
     </script>
     <div>
-      <img
-        src="http://cdn.sketchpan.com/member/guest/14205/1420597208897/0.png"
-        alt="유저"
-        id="user"
-      />
-      <img
-        src="https://us.123rf.com/450wm/dagadu/dagadu2001/dagadu200100026/139361927-%EB%A7%8C%ED%99%94-%EA%B0%95%ED%95%9C-%EA%BF%80%EB%B2%8C-%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8-%EC%BA%90%EB%A6%AD%ED%84%B0.jpg?ver=6"
-        alt="벌"
-        id="bee"
-      />
+        <img src="http://cdn.sketchpan.com/member/guest/14205/1420597208897/0.png" alt="유저" id="user" />
+        <img src="https://us.123rf.com/450wm/dagadu/dagadu2001/dagadu200100026/139361927-%EB%A7%8C%ED%99%94-%EA%B0%95%ED%95%9C-%EA%BF%80%EB%B2%8C-%EB%A7%88%EC%8A%A4%EC%BD%94%ED%8A%B8-%EC%BA%90%EB%A6%AD%ED%84%B0.jpg?ver=6"
+            alt="벌" id="bee" />
     </div>
-  </body>
+</body>
+
 </html>
