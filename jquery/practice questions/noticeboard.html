@@ -27,6 +27,13 @@
         else $("#all-check").prop("checked", true);
       });
 
+      // 확인을 제외한 각각 체크들을 다 클릭하면 확인 체크
+      $("input:checkbox[name=check]").change(function () {
+        if ($("input[name=check]:checked").length == 6)
+          $("input:checkbox[name=all-check]").prop("checked", true);
+        else $("input:checkbox[name=all-check]").prop("checked", false);
+      });
+
       $("#log").click(function () {
         //로그출력
         $("input:checkbox[name=check]").each(function () {
