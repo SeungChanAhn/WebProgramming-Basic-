@@ -34,25 +34,27 @@
             bottom: 0px;
         }
     </style>
-    <script>
-          window.onkeydown = function () {
-    if (event.keyCode == 32) {
-      $(function () {
-        $('#user').animate({
-          top: '-=150px'
-        }).animate({
-          top: '+=150px'
-        })
-      })
-    }}
-    $(function moveInfinit(){
-      $('#bee').animate({
-        left:-100
-      },2000,function(){
-        $('#bee').animate({
-          bottom: 0, left:900},0,moveInfinit);
+    <script>  
+        window.onkeydown = function () {
+            if (event.keyCode == 32) {
+                $(function () {
+                    $('#user').animate({
+                        top: '-=150px'
+                    }).animate({
+                        top: '+=150px'
+                    })
+                })
+            }
+        }
+        $(function moveInfinit() {
+            $('#bee').animate({
+                left: -100
+            }, 2000, function () {
+                $('#bee').animate({
+                    bottom: 0, left: 900
+                }, 0, moveInfinit);
+            });
         });
-      });
 
     </script>
     <div>
