@@ -20,8 +20,8 @@
       });
 
       $("input[name=check]").click(function () {
-        var total = $("input[name=check]").length;
-        var checked = $("input[name=check]:checked").length;
+        let total = $("input[name=check]").length;
+        let checked = $("input[name=check]:checked").length;
 
         if (total != checked) $("#all-check").prop("checked", false);
         else $("#all-check").prop("checked", true);
@@ -52,6 +52,11 @@
       border-collapse: collapse;
     }
 
+    th {
+      border: 1px solid black;
+      background-color: beige;
+    }
+
     tr,
     td {
       border: 1px solid black;
@@ -65,17 +70,18 @@
       margin-left: 225px;
       margin-top: 5px;
       width: 150px;
+      cursor: pointer;
     }
   </style>
   <div id="contain">
     <form action="">
       <table>
         <tr>
-          <td class="board-table">
+          <th class="board-table">
             <input type="checkbox" name="all-check" />확인
-          </td>
-          <td class="title">제목</td>
-          <td class="time">글쓴시간</td>
+          </th>
+          <th class="title">제목</th>
+          <th class="time">글쓴시간</th>
         </tr>
         <tr>
           <td class="board-table">
@@ -123,7 +129,7 @@
     </form>
   </div>
   <div id="log">
-    <input type="button" id="log" value="로그" />
+    <input type="button" id="log" value="로    그" />
   </div>
 </body>
 
