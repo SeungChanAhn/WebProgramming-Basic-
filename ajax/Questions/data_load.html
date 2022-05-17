@@ -6,23 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7일차 실습문제1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
     <script>
-        function loadDoc() {
+        function loadData() {
             fetch('https://jsonplaceholder.typicode.com/todos/1')
                 .then(response => response.json())
                 .then(json => {
-                    let result = `${json.title}`
-                    document.getElementById("result").innerHTML = result;
+                    json.title
+                    $('#result').append(`<li>${json.title}</li>`)
                 })
         }
     </script>
-    <button onclick="loadDoc()">데이터 로드</button>
+    <button onclick="loadData()">데이터 로드</button>
     <ul>
-        <li>여기</li>
-        <li id="result"></li>
+        <li id="result">여기</li>
     </ul>
 </body>
 
