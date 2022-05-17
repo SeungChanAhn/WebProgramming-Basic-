@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery에서 AJAX 코드 예</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //온로드
+        $(function () {
+            $("#get_data_button").click(function () {
+                $("#demo").load("ajax_info.txt");
+            });
+        });
+    </script>
+    <div id="demo"></div>
+    <!-- get data버튼 누르면  ajax_info.txt 의 내용 출력-->
+    <button id="get_data_button">get data</button>
+</body>
+
+</html>
