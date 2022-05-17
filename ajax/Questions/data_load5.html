@@ -23,22 +23,23 @@
             fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=a64533e7ece6c72731da47c9c8bc691f&language=ko-KR&page=1')
                 .then((response) => response.json())
                 .then((data) => {
-                    let list = $('#result');
+                    let movieList = $('#result');
                     for (var i = 0; i < data.results.length; i++) {
-                        list.append(`<div class="card" onclick="moveDetailPage(${i})">
-                                        <div class="container">
-                                            <div><img id="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"></div>
-                                            <p id="title"><b>${data.results[i].title}</b></p>
-                                        </div>
-                                    </div>`);
+                        movieList.append(`<div class="card" onclick="moveDetailPage(${i})"> 
+                                            <div class="container">
+                                                <h4><img id="poster" src="https://image.tmdb.org/t/p/w500${data.results[i].poster_path}"></h4>
+                                                <div id="title"><b>${data.results[i].title}</b></div>
+                                            </div>
+                                        </div>`);
                     }
                 });
         }
     </script>
     <style>
         .card {
+            display: inline-block;
+            width : 30%;
             /* Add shadows to create the "card" effect */
-            width: 33%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             transition: 0.3s;
             margin: 16px;
@@ -48,7 +49,7 @@
 
         /* On mouse-over, add a deeper shadow */
         .card:hover {
-            box-shadow: 0 8px 16px 0 black;
+            box-shadow: 0 8px 16px 0 rgb(112, 33, 185);
         }
 
         /* Add some padding inside the card container */
