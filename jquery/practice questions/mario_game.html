@@ -132,7 +132,7 @@
         게임오버<br>
         <button id="buttonPosition" class="game_start_button">재도전</button>
     </div>
-    
+
     <div id="package">
         <div id="title">마리오게임</div><br>
         <img id="start_mario" src="../../assets/punch.gif" alt="mario"><br>
@@ -181,7 +181,9 @@
             }
 
             function moveKiller() {
-                killer.animate({ right: "120%" }, 3000, function () {
+                const rand1 = Math.floor(Math.random() * 10) + 1;
+                const rand2 = rand1 * 500;
+                killer.animate({ right: "120%" }, rand2, function () {
                     killer.css({ right: "-100px" });
 
                     if (isGameOver == false) {
@@ -192,14 +194,14 @@
                 });
             }
 
-            function hitKiller() {
+            function hitKiller() { //미완성
                 let killerLeft = parseInt(killer.css("left").replace("px", ""));
                 let shootLeft = parseInt(shoot.css("left").replace("px", ""));
-                let shootRight = shootLeft + 50;
+                let shootRight = shootLeft;
 
                 if (isShooting == false
-                    && shootRight > killerLeft - 50
-                    && killerLeft - 50 > shootLeft
+                    && shootRight > killerLeft
+                    && killerLeft > shootLeft
                 ) {
                     score += 200;
                     $("#score").text(`SCORE : ${score}`);
@@ -268,7 +270,6 @@
             function game() {
                 $("#score").text(`SCORE : 0`);
                 setTimeout(moveKiller, 1000);
-
                 // 게임 화면 그리기 30frame
                 setInterval(function () {
                     if (isGameOver) {
