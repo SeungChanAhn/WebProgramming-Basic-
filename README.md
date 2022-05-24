@@ -1,4 +1,6 @@
 # WebProgramming-Basic-
+## 영화 검색
+https://seungchanahn.github.io/web-basic/vue/search_movie2.htmldata_load5.html
 
 ## 영화
 https://seungchanahn.github.io/web-basic/ajax/Questions/data_load5.html
